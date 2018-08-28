@@ -22,7 +22,7 @@
 	<import resource="brokers.xml"/>
  
 	<bean id="queueToDBRouteBuilder" class="com.poc.event.routebuilder.EventProcessingRouteBuilder">
-		<property name="startEndpoint" value ="jms:EVENT_QUEUE"></property>
+		<property name="startEndpoint" value ="jms:EVENT_QUEUE%3FconcurrentConsumers%3D5%26maxConcurrentConsumers%3D50%26maxMessagesPerTask%3D50"></property>
 		<property name="eventProcessor" ref ="eventProcessorRef"></property> 
 	</bean>
 	
